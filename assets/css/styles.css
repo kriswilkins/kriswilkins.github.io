@@ -141,8 +141,8 @@ button:hover {
 @media (max-width: 768px) {
     body {
     background-image: url('../images/falls.gif'); /* Your image */
-    background-size: flex; /* Fixed width & height */
-    background-position: center;
+    background-size: cover; /* Fixed width & height */
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed; /* Keeps it in place */
 }
