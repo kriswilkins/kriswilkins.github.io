@@ -139,13 +139,28 @@ button:hover {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    
+    html, body {
+        height: 100vh; /* Lock height to viewport */
+        overflow: hidden; /* Prevents background shift */
+    }
+
     body {
-    background-image: url('../images/falls.gif'); /* Your image */
-    background-size: cover; /* Fixed width & height */
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Keeps it in place */
-}
+        background-size: cover; /* Ensures full-screen fit */
+        background-position: center center; /* Keeps center in view */
+        background-attachment: fixed; /* Keeps it stable */
+    }
+
+    main {
+        height: 100vh; /* Content scrolls independently */
+        overflow: auto;
+    }
+
+    section {
+        max-height: 80vh;
+        overflow: auto;
+    }
+
     
     header {
         justify-content: center; /* Aligns menu button and title properly */
