@@ -139,6 +139,14 @@ button:hover {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    body {
+    background-image: url('../images/falls.gif'); /* Your image */
+    background-size: flex; /* Fixed width & height */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps it in place */
+}
+    
     header {
         justify-content: center; /* Aligns menu button and title properly */
         padding: 1%;
