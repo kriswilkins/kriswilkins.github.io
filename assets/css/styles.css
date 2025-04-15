@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
 /* General styles */
 body {
     font-family: 'tahoma';
@@ -142,30 +146,19 @@ button:hover {
     
     html, body {
         height: 100vh; /* Lock height to viewport */
-        overflow: hidden; /* Prevents background shift */
+        overflow: scroll; /* Prevents background shift */
     }
 
     body {
         background-size: cover; /* Ensures full-screen fit */
         background-position: center center; /* Keeps center in view */
         background-attachment: fixed; /* Keeps it stable */
+        padding-bottom: env(safe-area-inset-bottom);
     }
 
     main {
         height: 100vh; /* Content scrolls independently */
-        overflow: auto;
-    }
-
-    section {
-        max-height: 80vh;
-        overflow: auto;
-    }
-
-    
-    header {
-        justify-content: center; /* Aligns menu button and title properly */
-        padding: 1%;
-
+        overflow:scroll;
     }
 
     nav ul {
