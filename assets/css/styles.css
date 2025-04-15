@@ -1,0 +1,169 @@
+/* General styles */
+body {
+    font-family: 'tahoma';
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-image: url('../images/falls.gif'); /* Path to your image */
+    background-size: cover; /* Makes sure the image covers the whole page */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps it in place when scrolling */
+    color: #fff; /* Adjust text color to contrast with the background */
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Ensures it stays visible */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Keeps it above other elements */
+    background: #333;
+    padding: 20px;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+p {
+    white-space: pre-line;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Hard centers the nav */
+    width: 100%;
+    max-width: 800px; /* Adjust based on your section width */
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* Navigation Links */
+nav ul li {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Ensure Active Links Stay Centered */
+nav ul li a {
+    display: block;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Highlight the active page */
+nav ul li a.active {
+    color: #0e633891; /* Dark text for contrast */
+}
+
+nav ul li a:hover {
+    color: #0e633891;
+    transform: scale(1.2); /* Slightly enlarges the text */
+    
+}
+
+/* Main content */
+main {
+    margin-top: 60px;
+    padding: 40px;
+}
+
+section {
+    background: rgba(0, 0, 0, 0.623);
+    padding: 20px;
+    margin: 20px 20px;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #0e633891;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px; /* Makes the button rounded */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0e633891; /* Darker shade on hover */
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3); /* More depth on hover */
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background-color: #0e633891;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button:hover {
+    background-color: #0a4a2f;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        justify-content: center; /* Aligns menu button and title properly */
+        padding: 1%;
+
+    }
+
+    nav ul {
+        gap: 10px; /* Reduce spacing */
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Make text smaller so all fit on one row */
+        padding: 10px; /* Adjust spacing */
+    }
+
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
