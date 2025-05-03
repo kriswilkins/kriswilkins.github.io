@@ -34,37 +34,46 @@ document.addEventListener("DOMContentLoaded", function () {
     const uploadInput = document.getElementById("image-upload");
 
     window.processImage = async function () {
-        if (!uploadInput.files.length) {
-            alert("Please upload an image.");
-            return;
-        }
+    console.log("Extract & Translate button clicked!");
 
-        const file = uploadInput.files[0];
-        const reader = new FileReader();
+    const uploadInput = document.getElementById("image-upload");
 
-        reader.onload = async function () {
-            const img = new Image();
-            img.src = reader.result;
+    if (!uploadInput.files.length) {
+        alert("Please upload an image.");
+        console.log("No image uploaded.");
+        return;
+    }
 
-            // OCR using Tesseract.js
-            const { data: { text } } = await Tesseract.recognize(img, 'eng');
-            document.getElementById("extracted-text").innerText = text;
+    const file = uploadInput.files[0];
+    const reader = new FileReader();
 
-            // Translate Text using LibreTranslate API
-            fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=${encodeURIComponent(text)}`)
-            .then(res => res.json())
-            .then(data => {
-                const translatedText = data[0].map(segment => segment[0]).join(" "); // Join all segments
-                document.getElementById("translated-text").innerText = translatedText;
-            })
-            .catch(error => {
-                document.getElementById("translated-text").innerText = "Translation error.";
-                console.error("Error fetching translation:", error);
-            });
-        };
+    reader.onload = async function () {
+        const img = new Image();
+        img.src = reader.result;
 
-        reader.readAsDataURL(file);
+        console.log("Image loaded, starting OCR...");
+        
+        // OCR using Tesseract.js
+        const { data: { text } } = await Tesseract.recognize(img, 'eng');
+        console.log("Extracted text:", text);
+        document.getElementById("extracted-text").innerText = text;
+
+        // Translate Text
+        fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=${encodeURIComponent(text)}`)
+        .then(res => res.json())
+        .then(data => {
+            const translatedText = data[0].map(segment => segment[0]).join(" ");
+            document.getElementById("translated-text").innerText = translatedText;
+            console.log("Translated text:", translatedText);
+        })
+        .catch(error => {
+            document.getElementById("translated-text").innerText = "Translation error.";
+            console.error("Error fetching translation:", error);
+        });
     };
+
+    reader.readAsDataURL(file);
+};
 
     window.speakText = function () {
         let translatedText = document.getElementById("translated-text").innerText;
