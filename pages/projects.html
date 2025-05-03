@@ -6,6 +6,7 @@
         <title></title> <!-- Placeholder title -->
         <link rel="stylesheet" href="../assets/css/styles.css">
         <script src="../assets/js/script.js" defer></script> <!-- JavaScript updates the title dynamically -->
+        <script src="https://unpkg.com/tesseract.js"></script>
     </head>
 <body>
     <header>
@@ -29,8 +30,14 @@
                 preferred languages<br>
                 The project demonstrates strong technical implementation skills through various API integrations and cross-platform development, resulting in a fully functional mobile application compatible with both Android and iOS. The development process required significant time management, research, and collaborative teamwork to successfully deliver this versatile translation solution within the three-month timeframe.
             
-                I will soon be adding a link to a live demonstration video of the application.
+                Here's a walkthrough video of the application.<br>
             </p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/lqjXjBtY8uI?si=4eOT4Rp8W9bToTvQ" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>        
         </section>
         <section>
             <h1>Mental Health Chatbot</h1>
@@ -44,13 +51,31 @@
                 Overall, this project was a significant challenge that I look back on fondly. It allowed me to combine my technical skills in machine learning, data processing, and web development while creating a solution with potential positive impact on users' wellbeing.
             </p>
         </section>
-        <section>
+        <section class="whisay-section">
             <h1>Whisay</h1>
             <p>I independently developed Whisay, focusing on building my own Optical Character Recognition (OCR) system to extract and translate text from images.
                 I completed this project within the challenging timeframe of just one week.<br>
                 The application performed well when processing stored images but faced challenges with live-captured photos. To test the mobile functionality, I deployed the web application on Heroku to enable testing from my mobile device. However, I discovered that images were being compressed during transmission, which reduced the OCR system's ability to accurately recognize characters.<br>
-                The primary challenge for this project was the tight one-week time constraint, which prevented me from resolving the live-capture functionality issues. Despite this limitation, I was impressed with how much functionality I was able to implement in such a short period, successfully creating a working OCR system that could effectively process and translate text from stored images.
+                The primary challenge for this project was the tight one-week time constraint, which prevented me from resolving the live-capture functionality issues. Despite this limitation, I was impressed with how much functionality I was able to implement in such a short period, successfully creating a working OCR system that could effectively process and translate text from stored images.<br>
+                Here is an example of how the application works. It has been simplified to run as a client-side application on this website. Upload an image containing text in a language other than English, and the application will translate it into English for you and read it aloud.<br>
             </p>
+            <!-- Upload Image -->
+            <div class="input-container">
+                <input type="file" id="image-upload" accept="image/*">
+                <button onclick="processImage()">Extract & Translate</button>
+            </div>
+
+            <!-- Extracted & Translated Text Sections -->
+            <div class="text-container">
+                <p><strong>Extracted Text:</strong> <span id="extracted-text"></span></p>
+                <p><strong>Translated Text:</strong> <span id="translated-text"></span></p>
+            </div>
+
+            <!-- Read Aloud & Stop Playback Buttons -->
+            <div class="button-container">
+                <button onclick="speakText()">Read Aloud</button>
+                <button onclick="stopSpeech()">Stop Playback</button>
+            </div>
         </section>
     </main>
 </body>
