@@ -213,6 +213,17 @@ button:hover {
     height: 500px;
 }
 
+a {
+    all: unset;
+    display: block;
+    text-align: center;
+    margin: auto;
+    float: none;
+    width: fit-content;
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     
