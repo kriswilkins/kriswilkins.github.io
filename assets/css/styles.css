@@ -256,4 +256,13 @@ button:hover {
         overflow-y: scroll;
         scroll-behavior: smooth;
     }
+    .input-container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center them */
+    }
+
+    #image-upload, button {
+        width: 100%; /* Make elements full width */
+        max-width: 250px; /* Prevent excessive stretching */
+    }
 }
