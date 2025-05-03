@@ -265,4 +265,15 @@ button:hover {
         width: 100%; /* Make elements full width */
         max-width: 250px; /* Prevent excessive stretching */
     }
+
+    text-container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center the text */
+    }
+
+    .text-container p {
+        text-align: center; /* Ensure text is properly aligned */
+        width: 100%; /* Make each section full width */
+    }
+
 }
