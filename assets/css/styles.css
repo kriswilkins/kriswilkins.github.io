@@ -213,6 +213,13 @@ button:hover {
     height: 500px;
 }
 
+.w3-display-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 a {
     all: unset;
     display: block;
