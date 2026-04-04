@@ -5,7 +5,7 @@ main::-webkit-scrollbar {
 body::-webkit-scrollbar {
     display: none;
 }
-/* General styles */
+
 body {
     font-family: 'tahoma';
     margin: 0;
@@ -13,22 +13,23 @@ body {
     text-align: center;
     display: flex;
     justify-content: center;
-    background-image: url('../images/falls.gif'); /* Path to your image */
-    background-size: cover; /* Makes sure the image covers the whole page */
-    background-position: center; /* Centers the image */
-    background-attachment: fixed; /* Keeps it in place when scrolling */
-    color: #fff; /* Adjust text color to contrast with the background */
+    background-image: url('../images/falls.gif'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    color: #fff; 
+    overflow: hidden;
 }
 
-/* Header */
+
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed; /* Ensures it stays visible */
+    position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000; /* Keeps it above other elements */
+    z-index: 1000;
     background: #333;
     padding: 20px;
 }
@@ -41,30 +42,26 @@ p {
     white-space: pre-line;
 }
 
-/* Navigation */
 nav {
     width: 100%;
 }
 
-/* Navigation Bar */
 nav ul {
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: center; /* Hard centers the nav */
+    justify-content: center; 
     width: 100%;
-    max-width: 800px; /* Adjust based on your section width */
+    max-width: 800px; 
     padding: 0;
     margin: 0 auto;
 }
 
-/* Navigation Links */
 nav ul li {
     flex-grow: 1;
     text-align: center;
 }
 
-/* Ensure Active Links Stay Centered */
 nav ul li a {
     display: block;
     padding: 20px;
@@ -73,18 +70,16 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Highlight the active page */
 nav ul li a.active {
-    color: #0e633891; /* Dark text for contrast */
+    color: #0e633891;
 }
 
 nav ul li a:hover {
     color: #0e633891;
-    transform: scale(1.2); /* Slightly enlarges the text */
+    transform: scale(1.2);
     
 }
 
-/* Main content */
 main {
     margin-top: 60px;
     padding: 40px;
@@ -105,16 +100,16 @@ button {
     font-size: 18px;
     padding: 12px 24px;
     border: none;
-    border-radius: 25px; /* Makes the button rounded */
+    border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Button hover effect */
+
 button:hover {
-    background-color: #0e633891; /* Darker shade on hover */
-    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3); /* More depth on hover */
+    background-color: #0e633891;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
 }
 
 .contact-links {
@@ -157,7 +152,7 @@ button:hover {
 }
 
 .application-box {
-    width: 300px;  /* Adjust size */
+    width: 300px;
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -177,7 +172,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Adds spacing between elements */
+    gap: 10px;
     margin-bottom: 15px;
 }
 
@@ -186,19 +181,19 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Spacing between elements */
+    gap: 10px;
     margin-bottom: 15px;
 }
 
-/* Optional: Ensure text sections remain readable */
+
 .text-container p {
     margin: 0;
-    white-space: pre-wrap; /* Prevents text overflow */
+    white-space: pre-wrap;
 }
 
 #image-upload {
-    flex-grow: 1; /* Ensures it scales properly */
-    max-width: 250px; /* Adjust as needed */
+    flex-grow: 1;
+    max-width: 250px; 
 }
 
 .video-container {
@@ -231,33 +226,34 @@ a {
     color: inherit;
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
     
     html, body {
-        height: 100%; /* Lock height to viewport */
-        overflow: auto; /* Prevents background shift */
+        height: 100%; 
+        overflow: auto;
+        overflow: hidden;
     }
 
     body {
-        background-size: cover; /* Ensures full-screen fit */
-        background-position: center center; /* Keeps center in view */
-        background-attachment: fixed; /* Keeps it stable */
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
         padding-bottom: env(safe-area-inset-bottom);
     }
 
     main {
-        height: 100%; /* Content scrolls independently */
+        height: 100%;
         overflow: auto;
     }
 
     nav ul {
-        gap: 10px; /* Reduce spacing */
+        gap: 10px;
     }
 
     nav ul li a {
-        font-size: 14px; /* Make text smaller so all fit on one row */
-        padding: 10px; /* Adjust spacing */
+        font-size: 14px;
+        padding: 10px;
     }
 
 
@@ -275,23 +271,23 @@ a {
         scroll-behavior: smooth;
     }
     .input-container {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center them */
+        flex-direction: column;
+        align-items: center;
     }
 
     #image-upload, button {
-        width: 100%; /* Make elements full width */
-        max-width: 250px; /* Prevent excessive stretching */
+        width: 100%;
+        max-width: 250px;
     }
 
     text-container {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center the text */
+        flex-direction: column;
+        align-items: center;
     }
 
     .text-container p {
-        text-align: center; /* Ensure text is properly aligned */
-        width: 100%; /* Make each section full width */
+        text-align: center;
+        width: 100%;
     }
 
 }
