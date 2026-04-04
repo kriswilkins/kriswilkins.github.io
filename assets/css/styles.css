@@ -21,9 +21,7 @@ body {
     overflow: hidden;
 }
 
-p, span, div, h1, h2, a {
-    cursor: default !important;
-}
+* { cursor: default !important; }
 
 header {
     display: flex;
